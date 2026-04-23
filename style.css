@@ -1,0 +1,73 @@
+/* 画面中央に配置するためのリセットCSS */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1a1a1a;
+}
+
+/* 額縁（画像の表示エリア） */
+.picture-frame {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden; /* 枠からはみ出た部分を隠す */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* レイヤー共通設定（枠にぴったり重ねる） */
+.layer {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  /* 動きを滑らかにする魔法の1行 */
+  transition: transform 0.1s ease-out; 
+}
+
+/* 背景用レイヤー */
+.background {
+  background: radial-gradient(circle at center, #000000, #5e4d4d);
+  /* background-image: url('背景画像のパス'); <- 実際はこれを使います */
+}
+
+.foreground {
+  /* background-image などの指定を全て削除 */
+  width: 100%;
+  height: 100%;
+}
+
+.eye {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff; /* 白目 */
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  /* 黒目を中央に配置するための設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pupil {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  /* ハイライト、黒目、虹彩（緑）をここにまとめる */
+  background-image: 
+    radial-gradient(circle at 30% 30%, #ffffff 3px, transparent 4px),
+    radial-gradient(circle at center, #1a1a1a 15px, transparent 9px);
+  /* 黒目がスッと動くようにアニメーションを追加 */
+  transition: transform 0.05s linear;
+}
+
+.eye1 { top: 20%; left: 20%; transform: translate(-50%, -50%); }
+.eye2 { top: 70%; left: 15%; transform: translate(-50%, -50%) scale(0.8); }
+.eye3 { top: 40%; left: 50%; transform: translate(-50%, -50%) scale(1.3); }
+.eye4 { top: 15%; left: 80%; transform: translate(-50%, -50%); }
+.eye5 { top: 80%; left: 75%; transform: translate(-50%, -50%) scale(0.6); }
