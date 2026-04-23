@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #1a1a1a;
+  background-color: #878787;
 }
 
 /* 額縁（画像の表示エリア） */
@@ -31,7 +31,7 @@ body {
 
 /* 背景用レイヤー */
 .background {
-  background: radial-gradient(circle at center, #000000, #5e4d4d);
+  background: radial-gradient(circle at center, #7d7d7d, #5e4d4d);
   /* background-image: url('背景画像のパス'); <- 実際はこれを使います */
 }
 
